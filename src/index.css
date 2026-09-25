@@ -1,0 +1,34 @@
+/* ---------------------------------------------------------------------------
+   Global reset for the Dexoid marketing site.
+
+   This file REPLACES whatever Vite's React template put here. The template
+   styles a centred, full-screen demo app:
+
+     body { display: flex; place-items: center; min-height: 100vh; }
+     #root { max-width: 1280px; margin: 0 auto; padding: 2rem; text-align: center; }
+
+   Centring a page that is taller than the viewport pushes its top above the
+   top of the screen, and there is nothing to scroll back up to — which looks
+   exactly like "the site will not scroll". The marketing site is a scrolling
+   document, so all of that has to go.
+
+   Also delete the `import './App.css'` line from App.jsx, or App.css will
+   re-apply the same #root rules and undo this file.
+   ------------------------------------------------------------------------- */
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: none;
+  /* never height:100% or overflow:hidden here — both clip a long page */
+  min-height: 100%;
+  text-align: left;
+  display: block;
+}
+
+body {
+  background: #F5F4EF;
+  overflow-x: hidden;   /* horizontal only; vertical must stay scrollable */
+  overflow-y: auto;
+}
